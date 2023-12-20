@@ -13,5 +13,10 @@
 #include <stdio.h>
 int main()
 {
-    
+    char str;
+    printf("영단어 입력 : ");
+    scanf("%s", str);
+
+    printf("%s", str);
+    return 0;
 }
