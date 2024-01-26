@@ -3,8 +3,10 @@ int main(){
     int N;
     scanf("%d", &N);
 
-    int num[100];
-    for(int i=0; i<N; i++){
-        
-    }
+    int num;
+    scanf("%d", &num);
+
+    
+    
+
 }
