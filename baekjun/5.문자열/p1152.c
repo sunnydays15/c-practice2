@@ -1,25 +1,31 @@
 #include <stdio.h>
 #include <string.h>
+
 int main(){
-    char str[1000000];
+    char str[1000002];
     fgets(str, sizeof(str), stdin);
-    str[strlen(str)-1]=0;
 
     int fgap=0;
     while(str[fgap]==' ') fgap++;
 
-    int bgap=strlen(str)-2;
-    while(str[bgap]==' ') bgap--;
+    int bgap=strlen(str)-1;
+    while(str[--bgap]==' ');
 
     int cnt=0;
     for(int i=fgap; i<=bgap;){
         if(str[i]==' '){
-            cnt++;
+            if(i!=bgap) cnt++;
             while(str[i]==' ') i++;
         }
-        else i++;
+        else{
+            if(i==bgap){
+                cnt++;
+                break;
+            }
+            i++;
+        }
     }
-    printf("%d\n", cnt+1);
+    printf("%d\n", cnt);
 
     return 0;
 }
