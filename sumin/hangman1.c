@@ -8,15 +8,53 @@
 // 모든 알파벳을 다 맞추신다면. "축하드립니다 " 하고 끝납니다.
 // 목숨이 다하면 " 탈락입니다 !"
 
-// While 문과 for 문을 동시에 사용해야 합니다.
-
 #include <stdio.h>
-int main()
-{
-    char str;
-    printf("영단어 입력 : ");
+#include <string.h>
+int Checking(int cha, char* ptr, char* parr){
+    int tmp=0;
+    for(int i=0; i<strlen(ptr); i++){
+        if(ptr[i]==cha){
+            parr[i]=cha;
+            tmp++;
+        }
+        else continue;
+    }
+    if(tmp==0) return 0;
+    else return 1;
+}
+
+int main(){
+    char str[100];
     scanf("%s", str);
 
-    printf("%s", str);
+    printf("문자열의 길이는 %u입니다.\n", strlen(str));
+
+    char arr[100];
+    for(int i=0; i<strlen(str); i++){
+        arr[i]='_';
+    }
+
+    int chance;
+    for(chance=10; chance>0; ){
+        char cha;
+        scanf("%c", &cha);
+
+        int result=Checking(cha, str, arr);
+
+        if(str==arr){
+            printf("축하드립니다.\n");
+            break;
+        }
+        if(result==1){
+            printf("들어가있습니다. %s\n", arr);
+            chance--;
+        }
+        else{
+            chance--;
+            printf("들어가있지 않습니다. 목숨이 %d개 남았습니다.\n", chance);
+        }
+    }
+    if(chance==0) printf("탈락입니다!\n");
+
     return 0;
 }

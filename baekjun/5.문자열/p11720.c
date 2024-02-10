@@ -3,26 +3,21 @@ int main(){
     int N;
     scanf("%d", &N);
 
-    int num;
-    scanf("%d", &num);
+    long long num;
+    scanf("%lld", &num);
 
     int arr[N];
-    int i=0, n=N;
+    for(int i=0; i<N; i++){
+        int cnt=0;
 
-    for(int n; n>0; n--){
-        int tmp1=num, tmp2=n;
+        for(;num%10!=0;num--) cnt++;
 
-        for(; tmp2>1; tmp2--){
-            tmp1/=10;
-        }
-        arr[i]=tmp1;
-        i++;
+        num=num/10;
+        printf("%d\n", cnt);
+        arr[i]=cnt;
     }
-    
-    for(int j=0; j<N; j++)
-        printf("%d ", arr[i]);
-    
-    printf("\n");
+    for(int i=0; i<N; i++)
+        printf("%d\t", arr[i]);
     
     return 0;
 }
