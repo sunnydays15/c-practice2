@@ -13,7 +13,7 @@ typedef struct {
     double grade;
 }subject;
 
-void Convert(char* Gptr, double* gptr, int* cnt){
+void Convert(char* Gptr, double* gptr){
     if(Gptr[0]=='A'){
         if(Gptr[1]=='+') *gptr=4.5;
         else *gptr=4.0;
@@ -44,7 +44,7 @@ int main(){
 
     for(int i=0; i<20; i++){
         scanf("%s %lf %s", arr[i].subName, &arr[i].score, Grade);
-        Convert(Grade, &arr[i].grade, &cntP);
+        Convert(Grade, &arr[i].grade);
     }
 
     for(int i=0; i<20; i++){
