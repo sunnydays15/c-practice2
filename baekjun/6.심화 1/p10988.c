@@ -1,7 +1,7 @@
 #include <stdio.h>
 int palindrome(int front, int back, char* ptr){
     while(1){
-        if(front==back || front+1==back){
+        if(front>back){
             return 1;
         }
         else if(ptr[front]==ptr[back]){
