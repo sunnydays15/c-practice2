@@ -4,6 +4,8 @@
         "string.h": "c",
         "random": "c",
         "P10828.C": "cpp",
-        "vector": "c"
+        "vector": "c",
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
